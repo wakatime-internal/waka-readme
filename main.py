@@ -9,6 +9,7 @@ import sys
 import datetime
 import requests
 from github import Github, GithubException
+import simpler_requests
 
 START_COMMENT = '<!--START_SECTION:waka-->'
 END_COMMENT = '<!--END_SECTION:waka-->'
@@ -24,6 +25,8 @@ show_title = os.getenv("INPUT_SHOW_TITLE")
 commit_message = os.getenv("INPUT_COMMIT_MESSAGE")
 blocks = os.getenv("INPUT_BLOCKS")
 show_time = os.getenv("INPUT_SHOW_TIME")
+
+simpler_requests.patch()
 
 
 def this_week() -> str:
